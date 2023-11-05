@@ -1,0 +1,217 @@
+@import '../sass/base/variables.scss';
+@mixin tabletFot {
+    @media (max-width: 939px) {
+       @content;
+    }
+}
+@mixin tablet {
+    @media (max-width: 768px) {
+       @content;
+    }
+}
+
+
+@mixin mobile {
+    @media (max-width: 480px) {
+       @content;
+    }
+}
+
+.footer{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 30px 30px;
+    border-top: 2px solid $borde;
+    position: relative;
+    &:hover{
+        border-color: $borde3;
+    }
+        &::after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            right: 0;
+            background-color: $background2;
+            border-radius: 50% 50% 50% 50% / 0% 100% 0% 100% ;
+            z-index: -1;
+            
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            left: 0;
+            height: 100%;
+            background-color: $background5;
+            border-radius: 50% 50% 50% 50% / 100% 0% 100% 0% ;
+            z-index: -2;
+            
+        }
+   
+    form{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(3,auto);
+        padding: 30px;
+        border: 2px solid $borde;
+        gap: 25px;
+        max-width: 600px;
+        min-width: 250px;
+        width: 100%;
+        border-radius: 5px;
+        &:hover{
+            border-color: $borde3;
+        }
+       
+        @include mobile{
+            display: flex;
+            flex-direction: column;
+        }
+        h3{
+            text-transform: capitalize;
+        }
+       
+        .inputsContent{
+            grid-column: 1/2;
+            text-transform: capitalize;
+            min-width: 200px;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            @include mobile{
+               width: 100%;
+           
+            }
+
+
+            input[type="text"],input[type="email"],input[type="tel"]{
+                color: $titulo;
+                border: 10px 15px;
+                width: 100%;
+                border: none;
+                outline: none;
+                padding: 15px;
+                background: none;
+                border-bottom: 2px solid $borde;
+                &:focus, &:active{
+                    border-bottom: 2px solid $borde3;
+                    
+                }
+            }
+            label{
+                position: absolute;
+                margin: 0px 10px;
+                color: $fuente;
+                transition: transform 0.5s ease;
+                transform: translate(-5px, 0px);
+            }
+            .labelMov{
+                transform: translate(-20px,-25px) scale(0.8);
+
+            }
+        }
+        textarea{
+            resize: none;
+            grid-column: 2/3;
+            grid-row: 1/4;
+            background: none;
+            outline: none;
+            color: $titulo;
+            padding: 10px;
+            border-color: $borde;
+            width: 100%;
+            &:focus, &:active{
+               border-color: $borde3;
+                
+            }
+            &::-webkit-input-placeholder {
+                color: $fuente;
+                }
+        }
+
+        .buttonContent{
+            grid-column: 2/3;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            button{
+               margin-top: 10px;
+            }
+        }
+    }
+    .secondForm{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        @include tabletFot{
+            flex-direction: row;
+        }
+        
+        .redesSociales{
+            min-width: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            flex-wrap: wrap;
+            border: 2px solid $borde;
+            gap: 10px;
+            @include mobile{
+                padding: 15px;
+            }
+            &:hover{
+                border-color: $borde3;
+            }
+
+            h3{
+                text-transform: capitalize;
+    
+            }
+            div{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                i{
+                    font-size: 2em;
+                    transition: color 0.5s ease;
+                    &:hover{
+                        color: $fuent3;
+                    }
+                }
+            }
+        }
+        .info{
+            max-width: 250px;
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            flex-wrap: wrap;
+            border: 2px solid $borde;
+            gap: 10px;
+            color: $fuente;
+            @include mobile{
+                padding: 15px;
+            }
+            &:hover{
+                border-color: $borde3;
+            }
+            p{
+                text-align: center;
+            }
+        }
+    }
+}

@@ -1,0 +1,53 @@
+@use './normalize.scss';
+@import './sass/base/variables.scss';
+
+@font-face {
+    font-family: naruto;
+    src: url(./fonts/njnaruto.ttf);
+}
+@mixin tablet {
+    @media (max-width: 768px) {
+       @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: 480px) {
+       @content;
+    }
+}
+
+*::-webkit-scrollbar {
+    width: 12px;
+           /* width of the entire scrollbar */
+  }
+  
+*::-webkit-scrollbar-track {
+    background: $background2;
+          /* color of the tracking area */
+}
+  
+*::-webkit-scrollbar-thumb {
+    background-color: $background3;    /* color of the scroll thumb */
+    border-radius: 20px;
+        /* roundness of the scroll thumb */
+    box-shadow: rgba(255, 0, 0, 0.25) 0px 30px 60px -12px inset, rgba(255, 0, 0, 0.3) 0px 18px 36px -18px inset;  /* creates padding around scroll thumb */
+    
+    &:hover{
+        box-shadow: rgba(255, 255, 255, 0.623) 0px 30px 60px -12px inset, rgba(255, 255, 255, 0.603) 0px 18px 36px -18px inset;
+    }
+}
+
+body{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("https://parroquiasanjosecoruna.files.wordpress.com/2014/12/fondo-animados-estrellas.gif");
+    color: white;
+    @include tablet{
+        font-size: 14px;
+    }
+    @include mobile{
+        font-size: 12px;
+    }
+}
+

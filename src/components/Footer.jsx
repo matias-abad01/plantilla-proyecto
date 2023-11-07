@@ -32,9 +32,9 @@ const Footer = () => {
                     <input type="email" name="correo" id="correo" autoComplete='off' onFocus={(ev)=>onInputs(ev)} onBlur={(ev)=>offInputs(ev)}/>
                     <label htmlFor="correo">correo electronico:</label>   
                 </div>
-                <textarea name="mensaje" id="mensaje" rows="5" placeholder='escribir mensaje...'></textarea>
+                <textarea name="mensaje" id="mensaje" rows="5" placeholder='Escribir mensaje...'></textarea>
                 <div className={styles.buttonContent}>
-                    <button type="submit">tocar</button>
+                    <button type="submit">enviar</button>
                 </div>
             </form>
             <div className={styles.secondForm}>
